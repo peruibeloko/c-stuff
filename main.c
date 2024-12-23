@@ -8,7 +8,7 @@ int main(void) {
   bool arraysFilled = false;
   int choice;
 
-  system("chcp 65001 > nul");
+  system("chcp 65001 > NUL");
   inicializarVetores(&arr1, &arr2);
 
   do {

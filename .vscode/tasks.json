@@ -4,43 +4,21 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "clang: build",
+      "label": "Build for debugging",
       "type": "shell",
-      "command": "clang",
-      "args": [
-        "*.c",
-        "-D=_CRT_SECURE_NO_WARNINGS",
-        "--output=build${pathSeparator}main.exe",
-      ],
-      "group": {
-        "kind": "build",
-        "isDefault": false
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "windows": {
+        "command": ".\\scripts\\build_debug.bat"
       },
       "presentation": {
         "echo": false,
-        "reveal": "always",
+        "reveal": "never",
         "focus": false,
         "panel": "shared",
         "showReuseMessage": false,
-        "clear": true
-      }
-    },
-    {
-      "label": "Run main",
-      "type": "shell",
-      "command": "build${pathSeparator}${fileBasenameNoExtension}.exe",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "dependsOn": ["clang: build"],
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "shared",
-        "showReuseMessage": false,
-        "clear": false
+        "clear": true,
       }
     }
   ]

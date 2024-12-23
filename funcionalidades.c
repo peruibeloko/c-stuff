@@ -114,8 +114,8 @@ void inicializarVetores(Array* arr1, Array* arr2) {
   int tamanho2 = askForInt("Qual o tamanho do vetor 2? ");
   printf("====================================\n\n");
 
-  arr1 = initArray(tamanho1);
-  arr2 = initArray(tamanho2);
+  initArray(tamanho1, arr1);
+  initArray(tamanho2, arr2);
 }
 
 void preencherVetores(Array* arr1, Array* arr2) {

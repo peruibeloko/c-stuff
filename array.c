@@ -12,11 +12,10 @@ typedef struct {
   int size;
 } ArraySlice;
 
-Array* initArray(int size) {
-  Array* out = malloc(sizeof(Array));
-  out->arr = calloc(size, sizeof(int));
-  out->size = size;
-  return out;
+void initArray(int size, Array* arr) {
+  arr = malloc(sizeof(Array));
+  arr->arr = calloc(size, sizeof(int));
+  arr->size = size;
 }
 
 ArraySlice* initArraySlice(int* arr, int startIndex, int endIndex) {
