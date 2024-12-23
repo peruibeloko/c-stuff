@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct {
@@ -12,10 +13,15 @@ typedef struct {
   int size;
 } ArraySlice;
 
-void initArray(int size, Array* arr) {
-  arr = malloc(sizeof(Array));
+Array* initArray(int size) {
+  Array* arr = malloc(sizeof(*arr));
+  if (!arr) {
+    puts("malloc failed");
+    exit(1);
+  }
   arr->arr = calloc(size, sizeof(int));
   arr->size = size;
+  return arr;
 }
 
 ArraySlice* initArraySlice(int* arr, int startIndex, int endIndex) {

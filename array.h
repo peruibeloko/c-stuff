@@ -12,7 +12,7 @@ typedef struct {
 
 void swap(ArraySlice* l, int leftIndex, ArraySlice* r, int rightIndex);
 
-void initArray(int size, Array* arr);
+Array* initArray(int size);
 
 ArraySlice* toSlice(Array* arr);
 ArraySlice* take(ArraySlice* arr, int startIndex, int count);

@@ -90,9 +90,9 @@ int countValidElements(Array* arr) {
 
 //? Public
 
-void naoPreenchido() { printf("Os vetores ainda não foram preenchidos!\n"); }
+void naoPreenchido() { printf("Os vetores ainda não foram preenchidos!\n\n"); }
 
-void naoReconhecido() { printf("Opção não reconhecida, tente novamente.\n"); }
+void naoReconhecido() { printf("Opção não reconhecida, tente novamente.\n\n"); }
 
 void printMenu() {
   printf("========== MENU DE OPÇÕES ==========\n");
@@ -109,17 +109,18 @@ void printMenu() {
 }
 
 void inicializarVetores(Array* arr1, Array* arr2) {
+  system("cls");
   printf("========== INICIALIZAR VETORES ==========\n");
   int tamanho1 = askForInt("Qual o tamanho do vetor 1? ");
   int tamanho2 = askForInt("Qual o tamanho do vetor 2? ");
-  printf("====================================\n\n");
+  printf("========================================\n\n");
 
-  initArray(tamanho1, arr1);
-  initArray(tamanho2, arr2);
+  arr1 = initArray(tamanho1);
+  arr2 = initArray(tamanho2);
 }
 
 void preencherVetores(Array* arr1, Array* arr2) {
-
+  system("cls");
   printf("========== PREENCHENDO VETORES ==========\n");
   printf("[1] Automático\n");
   printf("[2] Manual\n");
@@ -138,7 +139,7 @@ void preencherVetores(Array* arr1, Array* arr2) {
       naoReconhecido();
       break;
     }
-  } while (estrategia != 1 || estrategia != 2);
+  } while (estrategia < 1 || estrategia > 2);
 
   estrategia = 0;
 
@@ -155,7 +156,7 @@ void preencherVetores(Array* arr1, Array* arr2) {
       naoReconhecido();
       break;
     }
-  } while (estrategia != 1 || estrategia != 2);
+  } while (estrategia != 1 && estrategia != 2);
 }
 
 void imprimirVetores(Array* arr1, Array* arr2) {}
