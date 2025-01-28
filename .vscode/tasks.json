@@ -9,9 +9,7 @@
       "options": {
         "cwd": "${workspaceFolder}"
       },
-      "windows": {
-        "command": ".\\scripts\\build.bat"
-      },
+      "command": "make",
       "presentation": {
         "echo": false,
         "reveal": "never",
@@ -24,15 +22,7 @@
     {
       "label": "Run",
       "type": "shell",
-      "options": {
-        "shell": {
-          "executable": "wt.exe",
-          "args": [
-            "-d ${workspaceFolder}\\build",
-          ]
-        }
-      },
-      "command": "cmd /k calculadora.exe",
+      "command": "./build/calculadora",
       "dependsOn": ["Build"],
       "group": {
         "kind": "build",
@@ -40,8 +30,8 @@
       },
       "presentation": {
         "echo": false,
-        "reveal": "never",
-        "focus": false,
+        "reveal": "always",
+        "focus": true,
         "panel": "shared",
         "showReuseMessage": false,
         "clear": true

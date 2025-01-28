@@ -7,9 +7,8 @@ int main(void) {
   bool arraysFilled = false;
   int choice;
 
-  system("chcp 65001 > NUL");
   inicializarVetores(&arr1, &arr2);
-  system("cls");
+  system("clear");
 
   do {
     printMenu();
@@ -20,7 +19,7 @@ int main(void) {
       case 1:
         preencherVetores(&arr1, &arr2);
         arraysFilled = true;
-        system("cls");
+        system("clear");
         break;
       case 2:
       case 3:
@@ -29,14 +28,14 @@ int main(void) {
       case 6:
       case 7:
       case 8:
-        system("cls");
+        system("clear");
         naoPreenchido();
         break;
       case 9:
         break;
       default:
         do {
-          system("cls");
+          system("clear");
           naoReconhecido();
           printMenu();
           choice = askForInt("Escolha a sua opção: ");
@@ -46,32 +45,32 @@ int main(void) {
       switch (choice) {
       case 1:
         preencherVetores(&arr1, &arr2);
-        system("cls");
+        system("clear");
       case 2:
         imprimirVetores(&arr1, &arr2);
-        system("cls");
+        system("clear");
       case 3:
         eliminarElementoCall(&arr1, &arr2);
-        system("cls");
+        system("clear");
       case 4:
         pesquisarElementoCall(&arr1, &arr2);
-        system("cls");
+        system("clear");
       case 5:
         ordenarVetores(&arr1, &arr2);
-        system("cls");
+        system("clear");
       case 6:
         calcularOperacoes(&arr1, &arr2);
-        system("cls");
+        system("clear");
       case 7:
         calcularEstatisticasCall(&arr1, &arr2);
-        system("cls");
+        system("clear");
       case 8:
         contarElementosValidosCall(&arr1, &arr2);
-        system("cls");
+        system("clear");
       case 9:
         break;
       default:
-        system("cls");
+        system("clear");
         naoReconhecido();
       }
     }

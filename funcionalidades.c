@@ -109,7 +109,7 @@ void printMenu() {
 }
 
 void inicializarVetores(Array* arr1, Array* arr2) {
-  system("cls");
+  system("clear");
   printf("========== INICIALIZAR VETORES ==========\n");
   int tamanho1 = askForInt("Qual o tamanho do vetor 1? ");
   int tamanho2 = askForInt("Qual o tamanho do vetor 2? ");
@@ -120,7 +120,7 @@ void inicializarVetores(Array* arr1, Array* arr2) {
 }
 
 void preencherVetores(Array* arr1, Array* arr2) {
-  system("cls");
+  system("clear");
   printf("========== PREENCHENDO VETORES ==========\n");
   printf("[1] Automático\n");
   printf("[2] Manual\n");
