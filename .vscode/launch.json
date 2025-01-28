@@ -8,7 +8,7 @@
       "name": "Debug",
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceFolder}/build/calculadora",
+      "program": "./build/calculadora",
       "terminal": "integrated",
       "preLaunchTask": "Build"
     }

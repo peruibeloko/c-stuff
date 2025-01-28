@@ -115,8 +115,8 @@ void inicializarVetores(Array* arr1, Array* arr2) {
   int tamanho2 = askForInt("Qual o tamanho do vetor 2? ");
   printf("========================================\n\n");
 
-  arr1 = initArray(tamanho1);
-  arr2 = initArray(tamanho2);
+  initArray(tamanho1, arr1);
+  initArray(tamanho2, arr2);
 }
 
 void preencherVetores(Array* arr1, Array* arr2) {
@@ -159,7 +159,13 @@ void preencherVetores(Array* arr1, Array* arr2) {
   } while (estrategia != 1 && estrategia != 2);
 }
 
-void imprimirVetores(Array* arr1, Array* arr2) {}
+void imprimirVetores(Array* arr1, Array* arr2) {
+  system("clear");
+  printf("Vetor 1\n");
+  printArray(arr1);
+  printf("Vetor 2\n");
+  printArray(arr2);
+}
 
 void eliminarElementoCall(Array* arr1, Array* arr2) {}
 

@@ -3,7 +3,14 @@
 #include <stdlib.h>
 
 int main(void) {
-  Array arr1, arr2;
+  Array arr1 = {
+      .arr = NULL,
+      .size = 0,
+  };
+  Array arr2 = {
+      .arr = NULL,
+      .size = 0,
+  };
   bool arraysFilled = false;
   int choice;
 
@@ -45,33 +52,34 @@ int main(void) {
       switch (choice) {
       case 1:
         preencherVetores(&arr1, &arr2);
-        system("clear");
+        break;
       case 2:
         imprimirVetores(&arr1, &arr2);
-        system("clear");
+        break;
       case 3:
         eliminarElementoCall(&arr1, &arr2);
-        system("clear");
+        break;
       case 4:
         pesquisarElementoCall(&arr1, &arr2);
-        system("clear");
+        break;
       case 5:
         ordenarVetores(&arr1, &arr2);
-        system("clear");
+        break;
       case 6:
         calcularOperacoes(&arr1, &arr2);
-        system("clear");
+        break;
       case 7:
         calcularEstatisticasCall(&arr1, &arr2);
-        system("clear");
+        break;
       case 8:
         contarElementosValidosCall(&arr1, &arr2);
-        system("clear");
+        break;
       case 9:
         break;
       default:
         system("clear");
         naoReconhecido();
+        break;
       }
     }
   } while (choice != 9);

@@ -13,15 +13,18 @@ typedef struct {
   int size;
 } ArraySlice;
 
-Array* initArray(int size) {
-  Array* arr = malloc(sizeof(*arr));
-  if (!arr) {
+void initArray(int size, Array* arr) {
+  arr->arr = malloc(size * sizeof(int));
+  if (!arr->arr) {
     puts("malloc failed");
     exit(1);
   }
-  arr->arr = calloc(size, sizeof(int));
+
+  for (int i = 0; i < size; i++) {
+    arr->arr[i] = 0;
+  }
+
   arr->size = size;
-  return arr;
 }
 
 ArraySlice* initArraySlice(int* arr, int startIndex, int endIndex) {
