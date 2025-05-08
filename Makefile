@@ -1,5 +1,13 @@
-SHELL=/bin/bash
+find := C:\msys64\usr\bin\find
+src_dir := src
+out_dir := out
+src_files := $(shell $(find) $(src_dir) -name "*.c")
 
-build/calculadora: $(wildcard *.c)
-	@if [ ! -d build ]; then mkdir build; fi
-	clang-19 --output=build/calculadora -g *.c
+calculadora: $(src_files) | $(out_dir)
+	gcc -g -o $(out_dir)/$@.exe $(src_files)
+
+$(out_dir):
+	mkdir $@
+
+clean:
+	-rd /q /s out
