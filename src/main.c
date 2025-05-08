@@ -14,6 +14,7 @@ int main(void) {
   bool arraysFilled = false;
   int choice;
 
+  system("@chcp 65001>nul");
   inicializarVetores(&arr1, &arr2);
   system("clear");
 
@@ -22,32 +23,31 @@ int main(void) {
     choice = askForInt("Escolha a sua opção: ");
 
     if (!arraysFilled) {
-      switch (choice) {
-      case 1:
+
+      if (choice == 1) {
         preencherVetores(&arr1, &arr2);
         arraysFilled = true;
         system("clear");
         break;
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-      case 7:
-      case 8:
+      }
+
+      if (choice >= 2 && choice <= 8) {
         system("clear");
         naoPreenchido();
         break;
-      case 9:
-        break;
-      default:
-        do {
-          system("clear");
-          naoReconhecido();
-          printMenu();
-          choice = askForInt("Escolha a sua opção: ");
-        } while (choice < 1 || choice > 9);
       }
+
+      if (choice == 9) {
+        break;
+      }
+
+      do {
+        system("clear");
+        naoReconhecido();
+        printMenu();
+        choice = askForInt("Escolha a sua opção: ");
+      } while (choice < 1 || choice > 9);
+
     } else {
       switch (choice) {
       case 1:
