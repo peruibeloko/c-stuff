@@ -6,10 +6,10 @@
   "configurations": [
     {
       "name": "Debug",
-      "type": "lldb",
+      "type": "cppdbg",
       "request": "launch",
-      "program": "./build/calculadora",
-      "terminal": "integrated",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/out/calculadora.exe",
       "preLaunchTask": "Build"
     }
   ]

@@ -22,7 +22,7 @@
     {
       "label": "Run",
       "type": "shell",
-      "command": "./build/calculadora",
+      "command": "./out/calculadora.exe",
       "dependsOn": ["Build"],
       "group": {
         "kind": "build",
